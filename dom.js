@@ -62,3 +62,25 @@ boton2.onclick = () =>{
   document.body.append(p)
 }
 
+
+
+window.addEventListener("load" , () => {
+  document.querySelector("#boton").addEventListener("click", function (evento){
+    let id = document.querySelector("#id").value;
+    let valor = document.querySelector("#valor").value;
+  });
+
+  document.querySelector("#boton2").addEventListener("click", function (evento){
+    let id = document.querySelector("#id").value;
+    if (sessionStorage.getItem(id)){
+      document.querySelector("#total").innerText = sessionStorage.getItem(id)
+    }
+  });
+
+  document.querySelector("borrarTotal").addEventListener("click", function (evento){
+    let id = document.querySelector("#id").value;
+    if (sessionStorage.getItem(id))
+      sessionStorage.removeItem(id);
+  })
+ 
+})
